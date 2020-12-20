@@ -1,0 +1,288 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>  한글 표시 할 것임.
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+   <meta charset="utf-8">
+   <title>Simple Polylines</title>
+   <style>
+     /* Always set the map height explicitly to define the size of the div
+      * element that contains the map. */
+     #map {                       /*map의 크기 조정*/
+       height: 70%;
+       width : 30%;
+     }
+     /* Optional: Makes the sample page fill the window. */
+     html, body {
+       height: 70%;
+       margin: 0;
+       padding: 0;
+     }
+     #map2 {          /*map2의 크기 조정*/              
+       height: 70%;
+       width : 30%;
+     }
+     /* Optional: Makes the sample page fill the window. */
+     html, body {
+       height: 70%;
+       margin: 0;
+       padding: 0;
+     }
+     #map3 {          /*map3의 크기 조정*/              
+       height: 70%;
+       width : 30%;
+     }
+     /* Optional: Makes the sample page fill the window. */
+     html, body {
+       height: 70%;
+       margin: 0;
+       padding: 0;
+     }
+     #ma4 {          /*map4의 크기 조정*/              
+       height: 70%;
+       width : 30%;
+     }
+     /* Optional: Makes the sample page fill the window. */
+     html, body {
+       height: 70%;
+       margin: 0;
+       padding: 0;
+     }
+     #map5 {          /*map5의 크기 조정*/              
+       height: 70%;
+       width : 30%;
+     }
+     /* Optional: Makes the sample page fill the window. */
+     html, body {
+       height: 70%;
+       margin: 0;
+       padding: 0;
+     }
+     #map6 {          /*map6의 크기 조정*/              
+       height: 70%;
+       width : 30%;
+     }
+     /* Optional: Makes the sample page fill the window. */
+     html, body {
+       height: 70%;
+       margin: 0;
+       padding: 0;
+     }
+   </style>
+ </head>
+ <body>
+   <div id="map"></div>          map을 만들거란걸 표시...?
+   <div id="map2"></div>           map2를 만들거란걸 표시...?
+   <div id="map3"></div>
+   <div id="map4"></div>
+   <div id="map5"></div>
+   <div id="map6"></div>
+   <script>
+     // This example creates a 2-pixel-wide red polyline showing the path of
+     // the first trans-Pacific flight between Oakland, CA, and Brisbane,
+     // Australia which was made by Charles Kingsford Smith.
+     function initMap() {   
+       var map = new google.maps.Map(document.getElementById('map'), {   // 첫번째 지도에서 보이는 위치
+         zoom: 16,
+         center: {lat: 37.555030, lng: 127.047163 }
+       });
+       var map2 = new google.maps.Map(document.getElementById('map2'), {  // 두번째 지도에서 보이는 위치
+           zoom: 16,
+           center: {lat: 37.555030, lng: 127.047163 }
+        });
+       var map3 = new google.maps.Map(document.getElementById('map3'), {  // 3번째 지도에서 보이는 위치
+           zoom: 16,
+           center: {lat: 37.555030, lng: 127.047163 }
+        });
+       var map4 = new google.maps.Map(document.getElementById('map4'), {  // 4번째 지도에서 보이는 위치
+           zoom: 16,
+           center: {lat: 37.555030, lng: 127.047163 }
+        });
+       var map5 = new google.maps.Map(document.getElementById('map5'), {  // 5번째 지도에서 보이는 위치
+           zoom: 16,
+           center: {lat: 37.555030, lng: 127.047163 }
+        });
+       var map6 = new google.maps.Map(document.getElementById('map6'), {  // 6번째 지도에서 보이는 위치
+           zoom: 16,
+           center: {lat: 37.555030, lng: 127.047163 }
+        });
+       var marker = new google.maps.Marker(
+        {position:{lat: 37.554692, lng: 127.047130}, map: map});  // 첫번째 지도에서 ftc 마커
+       var marker2 = new google.maps.Marker(
+        {position:{lat: 37.554692, lng: 127.047130}, map: map2});  // 두번째 지도에서 ftc 마커
+     var marker3 = new google.maps.Marker(
+             {position:{lat: 37.554692, lng: 127.047130}, map: map3});
+     var marker4 = new google.maps.Marker(
+             {position:{lat: 37.554692, lng: 127.047130}, map: map4});
+     var marker5 = new google.maps.Marker(
+             {position:{lat: 37.554692, lng: 127.047130}, map: map5});
+     var marker6 = new google.maps.Marker(
+             {position:{lat: 37.554692, lng: 127.047130}, map: map6});
+       google.maps.event.addDomListener(window, "load", initMap);  // 지도를 2개 이상 만들것이다.
+       var studentFood = [  // 한양플라자 학생식당으로 가는 길목 좌표
+        {lat: 37.554692, lng: 127.047130},   //FTC
+        {lat: 37.554904, lng: 127.047173 },    
+           {lat: 37.555176, lng: 127.046390 },  
+           {lat : 37.555172, lng :127.045934 },   
+           {lat : 37.555363, lng :127.045033 },    
+           {lat : 37.555478, lng :127.044583},     
+           {lat : 37.555878 , lng : 127.044068},   
+           {lat : 37.5565066 , lng : 127.0439519}      //한양플라자            
+       ];
+var loveRoom = [     // 사랑방으로 가는 길목 좌표
+{lat: 37.554692, lng: 127.047130},   //FTC
+{lat: 37.554904, lng: 127.047173 },    
+           {lat: 37.555176, lng: 127.046390 },  
+           {lat : 37.555172, lng :127.045934 },   
+           {lat : 37.555363, lng :127.045033 },    
+           {lat : 37.555478, lng :127.044583},     
+           {lat : 37.555878 , lng : 127.044068},
+           {lat : 37.556261 , lng : 127.043719},
+           {lat : 37.556992, lng : 127.043590},
+           {lat: 37.557521, lng: 127.044160}   //학생회관 사랑방      
+       ];
+var newMaterial = [   // 신소재공학관으로 가는 길목 좌표        
+           {lat: 37.554692, lng: 127.047130},  //FTC
+           {lat : 37.554451, lng :127.047008},   
+           {lat : 37.554234, lng :127.046194},  
+           {lat : 37.554153, lng : 127.045491},    
+           {lat : 37.554208 , lng : 127.045341},   
+           {lat : 37.5544373, lng :127.045396}     //신소재                
+       ];
+var middleCafe = [   // 노천카페로 가는 길목 좌표
+{lat: 37.554692, lng: 127.047130},  // FTC
+{lat: 37.554904, lng: 127.047173 },    
+           {lat: 37.555176, lng: 127.046390 },
+           {lat : 37.555172, lng :127.045934 },   
+           {lat : 37.555172, lng :127.045934 },    
+   {lat : 37.555830 , lng : 127.045476}   // 노천카페
+];
+var lifeScience = [    // 생명과학관으로 가는 길목 좌표
+{lat : 37.554692, lng : 127.047130},  // FTC
+{lat : 37.554904, lng : 127.047173 },    
+           {lat : 37.555176, lng : 127.046390 },
+           {lat : 37.555172, lng : 127.045934 },   
+           {lat : 37.555172, lng : 127.045934 },    
+   {lat : 37.555830, lng : 127.045476},
+   {lat : 37.555930, lng : 127.045715},
+   {lat : 37.556075, lng : 127.046176},
+   {lat : 37.556475, lng : 127.046208},
+   {lat : 37.556642, lng : 127.046706} //생과대    
+];
+var park = [     // 행원파크로 가는 길목 좌표
+{lat : 37.554692, lng: 127.047130},  // FTC
+{lat : 37.554904, lng: 127.047173 },
+   {lat : 37.554760, lng : 127.048210},  
+   {lat : 37.554909, lng : 127.048543},   
+   {lat : 37.555292, lng : 127.048854},     
+   {lat : 37.555471 , lng : 127.048784},   
+   {lat : 37.555973 , lng :  127.048493},
+   {lat : 37.556292 , lng :   127.048826},
+   {lat : 37.557109 , lng :  127.049615},
+   {lat : 37.557241 , lng :  127.049379},
+   {lat : 37.557109 , lng :   127.048885},
+   {lat : 37.557883 , lng :   127.048633}// 행원파크
+];
+       var Path = new google.maps.Polyline({   // path : 식당 으로 가는 리스트에 찍은 좌표들을 이을것이다
+         path: studentFood ,
+         geodesic: true,
+         strokeColor: '#FF0000',
+         strokeOpacity: 2.0,
+         strokeWeight: 3
+       });
+       var Path2 = new google.maps.Polyline({
+           path: lifeScience ,
+           geodesic: true,
+           strokeColor: '#FF0000',
+           strokeOpacity: 2.0,
+           strokeWeight: 3
+         });
+       var Path3 = new google.maps.Polyline({   // path : 식당 으로 가는 리스트에 찍은 좌표들을 이을것이다
+           path: newMaterial ,
+           geodesic: true,
+           strokeColor: '#FF0000',
+           strokeOpacity: 2.0,
+           strokeWeight: 3
+         });
+       var Path4 = new google.maps.Polyline({   // path : 식당 으로 가는 리스트에 찍은 좌표들을 이을것이다
+           path: loveRoom ,
+           geodesic: true,
+           strokeColor: '#FF0000',
+           strokeOpacity: 2.0,
+           strokeWeight: 3
+         });
+       var Path5 = new google.maps.Polyline({   // path : 식당 으로 가는 리스트에 찍은 좌표들을 이을것이다
+           path: middleCafe ,
+           geodesic: true,
+           strokeColor: '#FF0000',
+           strokeOpacity: 2.0,
+           strokeWeight: 3
+         });
+       var Path6 = new google.maps.Polyline({   // path : 식당 으로 가는 리스트에 찍은 좌표들을 이을것이다
+           path: park ,
+           geodesic: true,
+           strokeColor: '#FF0000',
+           strokeOpacity: 2.0,
+           strokeWeight: 3
+         });
+         Path.setMap(map);    // map 에 path를 표시
+         setMarkers(map);     // map의 식당들 위치에 깃발표시를 할 것이다.
+         Path2.setMap(map2);   // map2 에 path2를 표시
+         setMarkers(map2);     // map2의 식당들 위치에 깃발 표시
+         Path3.setMap(map3);   // map3 에 path3를 표시
+         setMarkers(map3);     // map3의 식당들 위치에 깃발 표시
+         Path4.setMap(map4);   // map4 에 path4를 표시
+         setMarkers(map4);     // map4의 식당들 위치에 깃발 표시
+         Path5.setMap(map5);   // map5 에 path5를 표시
+         setMarkers(map5);     // map5의 식당들 위치에 깃발 표시
+         Path6.setMap(map6);   // map6 에 path6를 표시
+         setMarkers(map6);     // map6의 식당들 위치에 깃발 표시      
+       }
+     var flags = [     // 식당들의 좌표
+         ['학생회관', 37.557521, 127.044160, 4],
+         ['한양플라자', 37.5565066, 127.0439519, 5],
+         ['신소재공학관', 37.5544373, 127.045396, 3],
+         ['행원파크', 37.557883, 127.048633, 2],
+         ['생활과학관', 37.556642, 127.046706, 1]
+       ];
+     function setMarkers(map) {
+       var image = {   // 깃발 모양 이미지 가져오기
+               url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+               // This marker is 20 pixels wide by 32 pixels high.
+               size: new google.maps.Size(20, 32),
+               // The origin for this image is (0, 0).
+               origin: new google.maps.Point(0, 0),
+               // The anchor for this image is the base of the flagpole at (0, 32).
+               anchor: new google.maps.Point(0, 32),
+
+               labelOrigin: new google.maps.Point(15,40)
+             };
+       var shape = {
+               coords: [1, 1, 1, 20, 18, 20, 18, 1],
+               type: 'poly'
+             };
+       for (var i = 0; i < flags.length; i++) {    //깃발모양 마커를 map의 각 좌표에 표시하자
+           var flag = flags[i];
+           var marker = new google.maps.Marker({
+             position: {lat: flag[1], lng: flag[2]},
+             map: map,
+             icon: image,
+             shape: shape,
+             title: flag[0],
+             label : {text: flag[0],
+                 color: "#BB82B4",
+                 fontSize: "8px",
+                 fontWeight: "bold"
+},
+             zIndex: flag[3]
+           });
+         }        
+     }   
+   </script>
+   <script async defer
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2Kw4tAxJcTljgHshXI59tCd80WZ2iz-c&callback=initMap"> //내 구글 api 키 설정
+   </script>
+ </body>
+</html>
