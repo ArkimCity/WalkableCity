@@ -11,6 +11,13 @@ var newyork = { lat: 40.7124988481609 ,lng: -74.00921376413213 };
 var button1 = document.getElementById('button1');
 button1.addEventListener('click', scaleReset);
 
+var temp;
+
+function input(){
+var input = document.getElementById("input").value;
+temp = input;
+}
+
 function initMap() {
     map1 = new google.maps.Map( document.getElementById('map1'), {
         zoom: 12,
@@ -34,8 +41,10 @@ function initMap() {
 }
 
 function scaleReset(){
-  map1.setZoom(14);
-  map2.setZoom(14);
-  map3.setZoom(14);
-  map4.setZoom(14);
+    var input = document.getElementById("input").value;
+    temp = input;
+  map1.setZoom(temp);
+  map2.setZoom(temp);
+  map3.setZoom(temp);
+  map4.setZoom(temp);
 }
