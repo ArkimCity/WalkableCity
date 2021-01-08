@@ -6,21 +6,23 @@
   <script src="./script.js"></script>
 </head>
 <body>
-  <input type="number" id="input">
+  <input type="number" id="input" value="12">
   <button type="button" onclick="scaleReset()" id="button1">스케일 리셋하기</button>
   약 10에서 20이 권장입니다.
-  <br><br><hr>
 
-  <div id="map1" onwheel="myFunction(event)" style="width:50%; height: 45vh; float: left; border: 1px;" ></div>
+  <img src="asset/image/capture.PNG" onwheel="sameScale(event)" alt="" style="height: 5vh;">
+ <br><hr>
+
+  <div id="map1" style="width:50%; height: 45vh; float: left; border: 1px;" ></div>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2Kw4tAxJcTljgHshXI59tCd80WZ2iz-c&callback=initMap&region=kr"></script>
 
-  <div id="map2" onwheel="myFunction(event)" style="width:50%; height: 45vh; float: right; border: 1px;"></div>
+  <div id="map2" style="width:50%; height: 45vh; float: right; border: 1px;"></div>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2Kw4tAxJcTljgHshXI59tCd80WZ2iz-c&callback=initMap&region=kr"></script>
 
-  <div id="map3" onwheel="myFunction(event)" style="width:50%; height: 45vh; float: left; border: 1px;"></div>
+  <div id="map3" style="width:50%; height: 45vh; float: left; border: 1px;"></div>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2Kw4tAxJcTljgHshXI59tCd80WZ2iz-c&callback=initMap&region=kr"></script>
 
-  <div id="map4" onwheel="myFunction(event)" style="width:50%; height: 45vh; float: right; border: 1px;"></div>
+  <div id="map4" style="width:50%; height: 45vh; float: right; border: 1px;"></div>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2Kw4tAxJcTljgHshXI59tCd80WZ2iz-c&callback=initMap&region=kr"></script>
 
 </body>
