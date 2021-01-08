@@ -41,3 +41,19 @@ function scaleReset() {
     map3.setZoom(input);
     map4.setZoom(input);
 }
+
+function myFunction(event) {
+    var y = event.deltaY;
+    let currentZoom = map1.zoom;
+    if (y > 0) {
+        map1.setZoom(currentZoom + 1);
+        map2.setZoom(currentZoom + 1);
+        map3.setZoom(currentZoom + 1);
+        map4.setZoom(currentZoom + 1);
+    } else {
+        map1.setZoom(currentZoom - 1);
+        map2.setZoom(currentZoom - 1);
+        map3.setZoom(currentZoom - 1);
+        map4.setZoom(currentZoom - 1);
+    }
+}
