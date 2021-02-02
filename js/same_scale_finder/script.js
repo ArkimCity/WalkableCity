@@ -3,12 +3,13 @@ var map2;
 var map3;
 var map4;
 
-var seoul = { lat: 37.5642135, lng: 127.0016985 };
-var london = { lat: 51.51531377742486, lng: -0.1276970532377955 };
-var tokyo = { lat: 35.682636526307334, lng: 139.76850437605137 };
-var newyork = { lat: 40.7124988481609, lng: -74.00921376413213 };
+var seoul = {lat: 37.5642135, lng: 127.0016985};
+var london = {lat: 51.51531377742486, lng: -0.1276970532377955};
+var tokyo = {lat: 35.682636526307334, lng: 139.76850437605137};
+var newyork = {lat: 40.7124988481609, lng: -74.00921376413213};
 
 var button1 = document.getElementById('button1');
+
 // button1.addEventListener('click', scaleReset);
 
 function initMap() {

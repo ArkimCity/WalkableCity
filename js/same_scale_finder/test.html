@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div onwheel="myFunction(event)" style="width:100px;height:100px;background-color:Tomato"></div>
+
+<script>
+    function myFunction(event) {
+        var y = event.deltaY;
+        var currentSize = event.target.style.width;
+        if (y > 0) {
+            newSize = parseInt(currentSize) + 10;
+        } else {
+            newSize = parseInt(currentSize) - 10;
+        }
+        event.target.style.width = newSize + "px";
+        event.target.style.height = newSize + "px";
+    }
+</script>
+</body>
+
+</html>
