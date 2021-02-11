@@ -1,12 +1,18 @@
-<script>
+<template>
+    <div>
+        
+    </div>
+</template>
 
-fetch('../seoulGeo/AL_11_D162_20200917.json').then((response)=>{
-    return response.json();
-}).then((gJson)=>{
-    console.log(gJson["features"][0]);
-})
+<script>
+// import SeoulGeo from '../assets/json/seoulGeo/AL_11_D162_20200917.json'
 
 export default {
-    
+    data: () => {
+        
+    },
+    created() {
+        // console.log(this.seoulGeo["type"]);
+    },
 }
 </script>
