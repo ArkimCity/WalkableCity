@@ -1,0 +1,14 @@
+{
+  "name": "569d101dd5bd332b",
+  "main": "569d101dd5bd332b@199.js",
+  "version": "199.0.0",
+  "homepage": "https://observablehq.com/d/569d101dd5bd332b",
+  "author": {
+    "name": "D3",
+    "url": "https://observablehq.com/@d3"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  }
+}

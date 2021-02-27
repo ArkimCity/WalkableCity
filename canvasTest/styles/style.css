@@ -1,0 +1,25 @@
+* {
+    user-select: none;
+    -ms-user-select: none;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: antiquewhite;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
