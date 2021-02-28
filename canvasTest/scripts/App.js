@@ -8,7 +8,6 @@ class App {
 
         // document.body.appendChild(this.canvas);
 
-
         window.addEventListener('resize', this.resize.bind(this), false);
         this.resize();
 
