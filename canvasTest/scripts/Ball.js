@@ -14,7 +14,7 @@ export class Ball {
         this.y += this.vy;
 
         this.bounceWindow(stageWidth, stageHeight);
-        
+        this.bounceBar();
 
         ctx.fillStyle = '#ff0000';
         ctx.beginPath();
@@ -51,5 +51,9 @@ export class Ball {
             this.vy *= -1;
             this.y += this.vy;
         }
+    }
+
+    deathCheck() {
+
     }
 }
