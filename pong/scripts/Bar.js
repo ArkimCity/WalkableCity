@@ -3,7 +3,7 @@ export class Bar {
         this.barWidth = 200;
         this.barHeight = 20;
         this.x = stageWidth/2 - this.barWidth/2;
-        this.y = stageHeight - this.barHeight*2;
+        this.y = stageHeight - this.barHeight*5;
     }
 
     draw(ctx) {
