@@ -21,6 +21,27 @@
             document.getElementsByClassName('calendar')[0].style.minHeight = "100px";
             document.getElementsByClassName('contrib-legend')[0].style.display = "none";
         });
+
+        async function test(){
+            async function goo(){
+                await foo(1, 2000)
+            }
+            await goo()
+            await foo(2, 500)
+            await foo(3, 1000)
+        }
+
+        function foo(num, sec){
+            return new Promise(function(resolve, reject){
+                setTimeout( function(){
+                    console.log(num);
+                    resolve("async는 Promise방식을 사용합니다.");
+                }, sec);
+            });
+        }
+
+        test()
+        console.log('재웅');
     </script>
 </body>
 </html>
