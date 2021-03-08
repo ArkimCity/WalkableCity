@@ -20,24 +20,28 @@ export default class SearchResult {
   }
 
   render() {
-    if (this.data.length > 0) {
-      this.$searchResult.innerHTML = this.data
-        .map(
-          cat => `
-            <div class="item">
-              <img src=${cat.url} alt=${cat.name} />
-            </div>
-          `
-        )
-        .join("");
-  
-      this.$searchResult.querySelectorAll(".item").forEach(($item, index) => {
-        $item.addEventListener("click", () => {
-          this.onClick(this.data[index]);
+    try {
+      if (this.data.length > 0) {
+        this.$searchResult.innerHTML = this.data
+          .map(
+            cat => `
+              <div class="item">
+                <img src=${cat.url} alt=${cat.name} />
+              </div>
+            `
+          )
+          .join("");
+    
+        this.$searchResult.querySelectorAll(".item").forEach(($item, index) => {
+          $item.addEventListener("click", () => {
+            this.onClick(this.data[index]);
+          });
         });
-      });
-    } else {
-      this.$searchResult.innerHTML = '검색 결과가 존재하지 않습니다'
+      } else {
+        this.$searchResult.innerHTML = '검색 결과가 존재하지 않습니다'
+      }
+    } catch (error) {
+      this.$searchResult.innerHTML = '오류가 발생했습니다 다시 시도해주세요.';
     }
   }
 }

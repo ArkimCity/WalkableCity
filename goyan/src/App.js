@@ -3,6 +3,7 @@ import ImageInfo from './ImageInfo.js'
 import SearchInput from './SearchInput.js'
 import SearchResult from './SearchResult.js'
 import SearchRandom from './SearchRandom.js'
+import Loading from './Loading.js'
 
 console.log("app is running!");
 
@@ -36,6 +37,10 @@ export default class App {
           image
         });
       }
+    });
+
+    this.loading = new Loading({
+      $target
     });
 
     this.imageInfo = new ImageInfo({

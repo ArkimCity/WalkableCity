@@ -1,5 +1,3 @@
-const TEMPLATE = '<input type="text">';
-
 export default class SearchInput {
   constructor({ $target, onSearch }) {
     const $searchInput = document.createElement("input");
