@@ -46,7 +46,13 @@
   }
   
   .SearchInput {
-    width: 100%;
+    width: 70%;
+    font-size: 40px;
+    padding: 10px 15px;
+  }
+  
+  .SearchRandom {
+    width: 30%;
     font-size: 40px;
     padding: 10px 15px;
   }

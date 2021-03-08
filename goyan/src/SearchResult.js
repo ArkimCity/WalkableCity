@@ -1,4 +1,4 @@
-export class SearchResult {
+export default class SearchResult {
   $searchResult = null;
   data = null;
   onClick = null;
@@ -20,20 +20,24 @@ export class SearchResult {
   }
 
   render() {
-    this.$searchResult.innerHTML = this.data
-      .map(
-        cat => `
-          <div class="item">
-            <img src=${cat.url} alt=${cat.name} />
-          </div>
-        `
-      )
-      .join("");
-
-    this.$searchResult.querySelectorAll(".item").forEach(($item, index) => {
-      $item.addEventListener("click", () => {
-        this.onClick(this.data[index]);
+    if (this.data.length > 0) {
+      this.$searchResult.innerHTML = this.data
+        .map(
+          cat => `
+            <div class="item">
+              <img src=${cat.url} alt=${cat.name} />
+            </div>
+          `
+        )
+        .join("");
+  
+      this.$searchResult.querySelectorAll(".item").forEach(($item, index) => {
+        $item.addEventListener("click", () => {
+          this.onClick(this.data[index]);
+        });
       });
-    });
+    } else {
+      this.$searchResult.innerHTML = '검색 결과가 존재하지 않습니다'
+    }
   }
 }

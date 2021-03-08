@@ -2,10 +2,11 @@ import api from './api.js'
 import ImageInfo from './ImageInfo.js'
 import SearchInput from './SearchInput.js'
 import SearchResult from './SearchResult.js'
+import SearchRandom from './SearchRandom.js'
 
 console.log("app is running!");
 
-export class App {
+export default class App {
   $target = null;
   data = [];
 
@@ -18,6 +19,13 @@ export class App {
         api.fetchCats(keyword).then(({ data }) => this.setState(data));
       }
     });
+    
+    this.searchRandom = new SearchRandom({
+      $target,
+      onSearch: () => {
+        api.fetchRandomCats().then(({ data }) => this.setState(data));
+      }
+    })
 
     this.searchResult = new SearchResult({
       $target,

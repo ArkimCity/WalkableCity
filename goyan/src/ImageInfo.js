@@ -1,4 +1,4 @@
-export class ImageInfo {
+export default class ImageInfo {
     $imageInfo = null;
     data = null;
   
@@ -35,6 +35,10 @@ export class ImageInfo {
             </div>
           </div>`;
         this.$imageInfo.style.display = "block";
+        
+        this.$imageInfo.querySelector('.close').addEventListener('click', ()=>{
+          this.$imageInfo.style.display = "none";
+        })
       } else {
         this.$imageInfo.style.display = "none";
       }
