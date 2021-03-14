@@ -11,7 +11,7 @@ export class Bar {
         ctx.fillRect(this.x, this.y, this.barWidth, this.barHeight);
     }
 
-    move(keyboardEvent, stageWidth, stageHeight) {
+    move(keyboardEvent, stageWidth) {
         console.log(stageWidth);
         if (keyboardEvent == 'ArrowRight'){
                 this.x += 50

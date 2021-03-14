@@ -11,7 +11,11 @@ class App {
         
         this.ball = new Ball(this.stageWidth, this.stageHeight,15,8);
         this.bar = new Bar(this.stageWidth, this.stageHeight);
-        
+
+        window.addEventListener('mousemove', (event) => {
+            this.bar.x = event.clientX // 마우스와 bar 연동
+        });
+
         window.onkeydown = (e) => this.bar.move(e.key,this.ctx, this.stageWidth, this.stageHeight);
         window.requestAnimationFrame(this.animate.bind(this));
     }
@@ -38,4 +42,5 @@ class App {
 
 window.onload = () => {
     new App();
+
 }
