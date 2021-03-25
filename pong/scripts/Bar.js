@@ -7,7 +7,7 @@ export class Bar {
     }
 
     draw(ctx) {
-        ctx.fillStyle = '#ffffff';
+        ctx.fillStyle = '#000000';
         ctx.fillRect(this.x, this.y, this.barWidth, this.barHeight);
     }
 
